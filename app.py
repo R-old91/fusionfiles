@@ -5,7 +5,7 @@ import tempfile
 import os
 
 st.set_page_config(page_title="Fusion CSV", page_icon="📊")
-st.title("📁 Fusionner plusieurs fichiers CSV")
+st.title("📁 Amélie script")
 
 # Upload d’un fichier zip
 uploaded_zip = st.file_uploader("Téléverse un dossier compressé (.zip) contenant des fichiers .csv", type="zip")
