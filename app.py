@@ -36,7 +36,14 @@ if uploaded_zip:
             dfs = []
             for file in csv_files:
                 try:
-                    dfs.append(pd.read_csv(file))
+                    # Lire le CSV
+                    df = pd.read_csv(file)
+                    # Extraire le dog_id depuis le nom de fichier (avant le premier '_')
+                    basename = os.path.basename(file)
+                    dog_id = basename.split('_')[0]
+                    # Ajouter la colonne dog_id
+                    df['dog_id'] = dog_id
+                    dfs.append(df)
                 except Exception as e:
                     st.warning(f"Erreur lors de la lecture de {file} : {e}")
             if dfs:
